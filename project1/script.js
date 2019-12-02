@@ -104,6 +104,22 @@ $(document).ready(function()
     
     });
 
+    $("button").click(function() 
+    {
+        newGame();
+    });
+
+    function newGame () 
+    {
+    for (var i = 0; i < 16; i++) 
+        {
+            $("#" + i).removeClass("red");
+            $("#" + i).removeClass("yellow");
+        }
+    }
+
+
+
 
 // $(".dot").mouseover(function()
 // {
