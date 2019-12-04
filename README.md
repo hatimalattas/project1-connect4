@@ -25,3 +25,6 @@ First thing I did was building the structure of the game in HTML, I used a div c
 ![GitHub Logo](/project1/Concept.JPG)
 
 The picture above explains how the code will check each row or diagonal or column wins or tie. By creating a for loop, the loop will check if any "r" + i will contain 4 elements in their array, and if it does, this means the condition is met, and there is a winner.
+
+## Link
+https://hatimalattas.github.io/project1-connect4/index.html
