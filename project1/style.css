@@ -2,14 +2,20 @@ body {
     background-color: rgb(179, 210, 245);
 }
 
-h1 {
-    text-align: center;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bolder;
-    letter-spacing: 0.5cm;
-    margin-bottom: 50px;
+.title {
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bolder;
+  
+  margin-bottom: 50px;
 }
+
+.playerPanel {
+  display: flex;
+  justify-content: space-around;
+}
+
 
 button {
     position: relative;
@@ -75,4 +81,16 @@ button:hover {
 
 .yellowHover {
     background-color: yellow;
+}
+
+.container {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.hide {
+  color: rgb(179, 210, 245);
+}
+.show {
+  color: black;
 }

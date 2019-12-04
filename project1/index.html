@@ -11,42 +11,45 @@
 
 <body>
 
-    <h1>Connect 4</h1>
+    <!-- <h1 class="title">Connect 4</h1> -->
+
     <button>New game</button>
+    <div class="playerPanel">
+        <h1 class="p1">Player 1<br><br><div class="active1">Active</div></h1>
+        <h1 class="p2">Player 2<br><br><div class="active2"></div></h1>
+    </div>
 
 <div id="board">
-    <div id="column1">
-        <div class="dot" id="3"></div>
-        <div class="dot" id="2"></div>
-        <div class="dot" id="1"></div>
-        <div class="dot" id="0"></div>           
+    <div class="columns" id="column1">
+        <div class="dot r1 r5 r10 r11" id="3"></div>
+        <div class="dot r2 r5 r11" id="2"></div>
+        <div class="dot r3 r5 r11" id="1"></div>
+        <div class="dot r4 r5 r9 r11" id="0"></div>           
     </div>
 
-    <div  id="column2">
-        <div class="dot" id="7"></div>
-        <div class="dot" id="6"></div>
-        <div class="dot" id="5"></div>
-        <div class="dot" id="4"></div>           
+    <div class="columns" id="column2">
+        <div class="dot r1 r6 r11" id="7"></div>
+        <div class="dot r2 r6 r10 r11" id="6"></div>
+        <div class="dot r3 r6 r9 r11" id="5"></div>
+        <div class="dot r4 r6 r11" id="4"></div>           
     </div>
 
-    <div id="column3">
-        <div class="dot" id="11"></div>
-        <div class="dot" id="10"></div>
-        <div class="dot" id="9"></div>
-        <div class="dot" id="8"></div> 
+    <div class="columns" id="column3">
+        <div class="dot r1 r7 r11" id="11"></div>
+        <div class="dot r2 r7 r9 r11" id="10"></div>
+        <div class="dot r3 r7 r10 r11" id="9"></div>
+        <div class="dot r4 r7 r11" id="8"></div> 
     </div>          
   
 
-    <div  id="column4">
-        <div class="dot" id="15"></div>
-        <div class="dot" id="14"></div>
-        <div class="dot" id="13"></div>
-        <div class="dot" id="12"></div>           
+    <div class="columns" id="column4">
+        <div class="dot r1 r8 r9 r11" id="15"></div>
+        <div class="dot r2 r8 r11" id="14"></div>
+        <div class="dot r3 r8 r11" id="13"></div>
+        <div class="dot r4 r8 r10 r11" id="12"></div>           
     </div>
 
 </div>
-
-
 
         <script src="script.js"></script>
 </body>
