@@ -1,4 +1,4 @@
-var activePlayer, columns, score,turnPlayer; 
+var activePlayer, columns, turnPlayer; 
 
 $(document).ready(function()
 {
@@ -12,13 +12,16 @@ $(document).ready(function()
         $("#" + columnIndex[0]).addClass("red");
         activePlayer++;
         columnIndex[0]++;
-        
+        $(".active2").text("Active")
+        $(".active1").text("")   
         }
             else if (activePlayer === 1)
         {
         $("#" + columnIndex[0]).addClass("yellow");
         activePlayer--;
         columnIndex[0]++;
+        $(".active1").text("Active")
+        $(".active2").text("")
         }
         checkWin();
         
@@ -31,13 +34,16 @@ $(document).ready(function()
         $("#" + columnIndex[1]).addClass("red");
         activePlayer++;
         columnIndex[1]++;
-        
+        $(".active2").text("Active")
+        $(".active1").text("")   
         }
             else if(activePlayer === 1)
         {
         $("#" + columnIndex[1]).addClass("yellow");
         activePlayer--;
         columnIndex[1]++;
+        $(".active1").text("Active")
+        $(".active2").text("")
 
         }
         checkWin();
@@ -51,7 +57,8 @@ $(document).ready(function()
         $("#" + columnIndex[2]).addClass("red");
         activePlayer++;
         columnIndex[2]++;
-        
+        $(".active2").text("Active")
+        $(".active1").text("")   
         }
             
         else if(activePlayer === 1) 
@@ -59,6 +66,8 @@ $(document).ready(function()
         $("#" + columnIndex[2]).addClass("yellow");
         activePlayer--;
         columnIndex[2]++;
+        $(".active1").text("Active")
+        $(".active2").text("")
         }
         checkWin();
    
@@ -71,6 +80,8 @@ $(document).ready(function()
         $("#" + columnIndex[3]).addClass("red");
         activePlayer++;
         columnIndex[3]++;
+        $(".active2").text("Active")
+        $(".active1").text("")   
         }
            
         else if (activePlayer === 1)
@@ -78,36 +89,38 @@ $(document).ready(function()
         $("#" + columnIndex[3]).addClass("yellow");
         activePlayer--;
         columnIndex[3]++;
+        $(".active1").text("Active")
+        $(".active2").text("")
         }
         checkWin();
        
     });
 
-    //     $(".columns").mouseover(function()
-    // {
-    //     if (activePlayer === 0 && $(this).hasClass("redHover") === false && $(this).hasClass("yellowHover") === false)
-    //     {
-    //     $(this).addClass("redHover");
-    //     }
-    //     else if (activePlayer === 1)
-    //     {
-    //     $(this).addClass("yellowHover");
-    //     }
-    // });
+        $(".columns").mouseover(function()
+    {
+        if (activePlayer === 0 && $(this).hasClass("redHover") === false && $(this).hasClass("yellowHover") === false)
+        {
+        $(this).addClass("redHover");
+        }
+        else if (activePlayer === 1)
+        {
+        $(this).addClass("yellowHover");
+        }
+    });
 
-    // $(".columns").mouseout(function()
-    // {
-    //     if (activePlayer === 0)
-    //     {
-    //     $(this).removeClass("redHover");
-    //     $(this).removeClass("yellowHover");
-    //     }
-    //     else if (activePlayer === 1) 
-    //     {
-    //     $(this).removeClass("yellowHover");
-    //     $(this).removeClass("redHover");
-    //     }
-    // });
+    $(".columns").mouseout(function()
+    {
+        if (activePlayer === 0)
+        {
+        $(this).removeClass("redHover");
+        $(this).removeClass("yellowHover");
+        }
+        else if (activePlayer === 1) 
+        {
+        $(this).removeClass("yellowHover");
+        $(this).removeClass("redHover");
+        }
+    });
     
 
     $("button").click(function()
@@ -123,18 +136,19 @@ $(document).ready(function()
         for (var i = 1; i < 12; i++) 
         {
         if($(".r" + i).not(".red").length === 0) {
-            alert("red wins");
-            newGame();
+            $(".active1").text("WINNER!")
+            $(".active2").text("")
+            
         }
         else if($(".r" + i).not(".yellow").length === 0)
         {
-            alert("yellow wins");
-            newGame();
+            $(".active1").text("")
+            $(".active2").text("WINNER!")
         }
         else if($(".r" + i).not(".red").length === 8 && $(".r" + i).not(".yellow").length === 8) 
         {
-            alert("tie");
-            newGame();
+            $(".active1").text("TIE!")
+            $(".active2").text("TIE!")
         }
 
         }
@@ -145,30 +159,15 @@ $(document).ready(function()
         activePlayer = 0;
         columnIndex = [0, 4, 8, 12];
         scores = [0, 0];
-        turnPlayer =0;
+        turnPlayer = 0;
+        $(".active1").text("Active")
+        $(".active2").text("")
 
     for (var i = 0; i < 16; i++) 
         {
-            $("#" + i).removeClass("red");
-            $("#" + i).removeClass("yellow");
+        $("#" + i).removeClass("red");
+        $("#" + i).removeClass("yellow");
         }
     }
 
-
-    $("#board").click(function()
-    {
-        if (turnPlayer === 0)
-        {
-            $(".active2").text("Active")
-            $(".active1").text("")
-            turnPlayer =1
-           
-        }
-        else if (turnPlayer === 1)
-        {
-            $(".active1").text("Active")
-            $(".active2").text("")
-            turnPlayer = 0
-        }
-    })
 });
