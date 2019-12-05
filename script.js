@@ -138,17 +138,22 @@ $(document).ready(function()
         if($(".r" + i).not(".red").length === 0) {
             $(".active1").text("WINNER!")
             $(".active2").text("")
-            
+            setTimeout(newGame, 3000);
+            // newGame();
         }
         else if($(".r" + i).not(".yellow").length === 0)
         {
             $(".active1").text("")
             $(".active2").text("WINNER!")
+            setTimeout(newGame, 3000);
+            // newGame();
         }
         else if($(".r" + i).not(".red").length === 8 && $(".r" + i).not(".yellow").length === 8) 
         {
             $(".active1").text("TIE!")
             $(".active2").text("TIE!")
+            setTimeout(newGame, 3000);
+            // newGame();
         }
 
         }
